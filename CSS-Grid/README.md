@@ -5,4 +5,4 @@ One of the interesting thing I learned is 'grid-area' property, by setting a nam
 NOTE: When using 'grid-template-areas' make sure for each row you need to have the same number of cells.
 
 
-NOTE: If you need an empty cell you can use a period "." which signifies an empty grid cell
+NOTE: If you need an empty cell you can use a period "." which signifies an empty grid cell.
