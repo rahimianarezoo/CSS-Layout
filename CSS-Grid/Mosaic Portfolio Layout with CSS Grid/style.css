@@ -1,0 +1,88 @@
+* { box-sizing: border-box; }
+
+body {
+  background-color: rgb(139, 139, 139);
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-content {
+  flex: 1 1 80%;
+  padding: 10%;
+  min-height: 100vh;
+}
+.portfolio {
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+.portfolio-item {
+  background: rgb(207, 237, 7);
+  color: light-gray;
+  font-weight: font-bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  background-size: cover;
+  background-position: top left;
+  transition: all ease-in-out 300ms;
+  position: relative;
+  z-index: 10;
+}
+.portfolio-item.medium {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.portfolio-item.large {
+  grid-row: span 3;
+  grid-column: span 3;
+}
+
+.portfolio-item.small {
+  grid-row: 4 ;
+  grid-column: 3;
+}
+
+.portfolio-item.tall{
+  grid-row: 4 / span 3;
+  grid-column: 4 / span 2;
+}
+
+.portfolio-item.wide{
+  grid-row: 5 / span 2;
+  grid-column: 1 / span 3;
+}
+
+.two {
+  background-image: url(https://picsum.photos/200/300/);
+  background-position: center;
+  background-size: inherit;
+  background-color: black;
+  color: aliceblue;
+}
+.two:hover::before {
+  opacity: 0.2;
+}
+.two:before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
