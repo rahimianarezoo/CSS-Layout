@@ -1,5 +1,5 @@
 :root {
-  --clr-primary-400: 263 55% 52%;
+  --clr-primary-400: 263 45% 42%;
   --clr-secondary-400: 217 19% 35%;
   --clr-secondary-500: 219 29% 14%;
   --clr-neutral-100: 0 0% 100%;
@@ -9,7 +9,7 @@
   --ff-primary: "Barlow Semi Condensed", sans-serif;
 
   --fw-400: 500;
-  --fw-700: 600;
+  --fw-700: 800;
 
   --fs-300: 0.6875rem;
   --fs-400: 0.8125rem;
@@ -47,13 +47,15 @@ ol[role="list"] {
 html:focus-within {
   scroll-behavior: smooth;
 }
-
-/* Set core body defaults */
 body {
+  place-content: center;
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: 2.5;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-700);
+  background-color: hsl(var(--clr-neutral-200));
 }
+
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
@@ -90,24 +92,18 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
-body {
-  display: grid;
-  place-content: center;
-  min-height: 100vh;
-
-  font-family: var(--ff-primary);
-  font-weight: var(--fw-400);
-
-  background-color: hsl(var(--clr-neutral-200));
-}
-
 h1,
 h2,
 h3 {
   font-weight: var(--fw-700);
 }
+.container {
+  margin: 0 auto;
+  display: table;
+  margin-top: 10%;
 
+}
+/* --------------------------------START of Testimonial pattern---------------------------------- */
 /* utilities */
 .flex {
   display: flex;
@@ -251,3 +247,121 @@ h3 {
 .testimonial > p:last-of-type {
   opacity: 0.7;
 }
+/* --------------------------------END of Testimonial pattern---------------------------------- */
+
+
+
+/* --------------------------------START of Mosaic pattern---------------------------------- */
+.main-content {
+  flex: 1 1 80%;
+  padding: 10%;
+  min-height: 100vh;
+}
+.portfolio {
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+.portfolio-item {
+  background: rgb(174 199 12);
+  color: light-gray;
+  font-weight: font-bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  background-size: cover;
+  background-position: top left;
+  transition: all ease-in-out 300ms;
+  position: relative;
+  z-index: 10;
+}
+.portfolio-item.medium {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.portfolio-item.large {
+  grid-row: span 3;
+  grid-column: span 3;
+}
+
+.portfolio-item.small {
+  grid-row: 4 ;
+  grid-column: 3;
+}
+
+.portfolio-item.tall{
+  grid-row: 4 / span 3;
+  grid-column: 4 / span 2;
+}
+
+.portfolio-item.wide{
+  grid-row: 5 / span 2;
+  grid-column: 1 / span 3;
+}
+
+.two {
+  background-image: url(https://picsum.photos/200/300/);
+  background-position: center;
+  background-size: inherit;
+  background-color: black;
+  color: aliceblue;
+}
+.two:hover::before {
+  opacity: 0.2;
+}
+.two:before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+/* --------------------------------END of Mosaic pattern---------------------------------- */
+
+
+/* --------------------------------START of Auto Span pattern---------------------------------- */
+.wrapper {
+  flex: 1 1 80%;
+  padding: 10%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+  color: #444;
+}
+
+.box {
+  background-color: rgb(174 199 12);;
+  color: black;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+
+}
+
+.a {
+grid-column: auto / span 2;
+}
+
+.k {
+grid-column: auto / span 3;
+}
+
+.g {
+grid-column: auto / span 2;
+grid-row: auto / span 2;
+}
+
+/* --------------------------------END of Auto Span pattern---------------------------------- */
