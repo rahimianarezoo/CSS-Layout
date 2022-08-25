@@ -101,7 +101,17 @@ h3 {
   margin: 0 auto;
   display: table;
   margin-top: 10%;
-
+}
+.css-grid, .css-flexbox{
+  border: 2px #52035a3d solid;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 30px;
+    box-shadow: 10px 10px 28px -7px  rgb(27 2 30 / 65%);
+}
+section> *:hover {
+  color: rgb(231, 137, 15);
+  text-shadow: rgb(27 2 30 / 65%);;
 }
 /* --------------------------------START of Testimonial pattern---------------------------------- */
 /* utilities */
@@ -343,7 +353,7 @@ h3 {
 }
 
 .box {
-  background-color: rgb(174 199 12);;
+  background-color: rgb(174 199 12);
   color: black;
   border-radius: 5px;
   padding: 20px;
@@ -365,3 +375,44 @@ grid-row: auto / span 2;
 }
 
 /* --------------------------------END of Auto Span pattern---------------------------------- */
+
+/* --------------------------------START of Basic Flexbox patterns---------------------------------- */
+.content {
+  margin: 0 20%;
+}
+.even-columns {
+  display: flex;
+}
+.even-columns > * {
+  background-color: rgb(174 199 12);
+  flex-basis: 100%;
+  margin: 5px;
+  text-align: center;
+}
+
+.grid-ish, .sidebar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-ish > * {
+  background-color: rgb(174 199 12);
+  margin: 5px;
+  text-align: center;
+  flex: 1 1 100%;
+}
+.sidebar > * {
+  background-color: rgb(174 199 12);
+  margin: 5px;
+  text-align: center;
+}
+.sidebar > *:nth-child(1) {
+  flex: 1 1 60%;
+  min-width: 30ch;
+}
+.sidebar > *:nth-child(2) {
+  flex: 1 1 30%;
+  min-width: 50ch;
+}
+
+/* --------------------------------END of Basic Flexbox patterns---------------------------------- */
