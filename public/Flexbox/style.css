@@ -1,0 +1,42 @@
+.nav-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+  
+  .nav-list > li {
+    list-style: none;
+    text-align: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color:rgb(241, 209, 248) ;
+    height: min-content;
+    line-height: 35px;
+  }
+  li:hover{
+    background-color: rgb(234, 190, 244) ;
+    border: 2px black solid;
+  } 
+  li> a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  header {
+  margin-block: 3rem;
+}
+
+body {
+    min-height: 100vh;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+  }
+  
+@media (max-width:550px) {
+  .nav-list{
+    flex-direction: column;
+  }
+}
