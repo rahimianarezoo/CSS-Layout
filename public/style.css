@@ -14,6 +14,8 @@
   --fs-300: 0.6875rem;
   --fs-400: 0.8125rem;
   --fs-500: 1.25rem;
+  --yellow: #ffc600;
+  --black: #272727;
 }
 
 /* Box sizing rules */
@@ -416,3 +418,46 @@ grid-row: auto / span 2;
 }
 
 /* --------------------------------END of Basic Flexbox patterns---------------------------------- */
+
+
+
+
+/* --------------------------------START of Albums---------------------------------- */
+.album-body{
+ background-image: url("../public/Grid/images/topography.svg"),
+  linear-gradient(110deg, #f93d66, #6d47d9);
+background-size: 340px, auto;
+min-height: calc(100vh - 100px);
+margin: 50px;
+/* background: white; */
+background-attachment: fixed;
+letter-spacing: -1px;
+}
+
+.albums {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+    /* border-box box model allows us to add padding and border to our elements without increasing their size */
+    box-sizing: border-box;
+    /* A system font stack so things load nice and quick! */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 100;
+    font-size: 10px;
+    color: var(--black);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+.album {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-gap: 10px;
+  align-items: center;
+}
+.album__artwork {
+  width: 100%;
+}
+/* ---------------------------------END of Albums--------------------------------- */
