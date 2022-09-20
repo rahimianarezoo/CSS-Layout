@@ -14,6 +14,8 @@
   --fs-300: 0.6875rem;
   --fs-400: 0.8125rem;
   --fs-500: 1.25rem;
+  --yellow: #ffc600;
+  --black: #272727;
 }
 
 /* Box sizing rules */
@@ -416,3 +418,181 @@ grid-row: auto / span 2;
 }
 
 /* --------------------------------END of Basic Flexbox patterns---------------------------------- */
+
+
+
+
+/* --------------------------------START of Albums---------------------------------- */
+.album-body{
+ background-image: url("../public/Grid/images/topography.svg"),
+  linear-gradient(110deg, #f93d66, #6d47d9);
+background-size: 340px, auto;
+min-height: calc(100vh - 100px);
+margin: 50px;
+/* background: white; */
+background-attachment: fixed;
+letter-spacing: -1px;
+}
+
+.albums {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+    /* border-box box model allows us to add padding and border to our elements without increasing their size */
+    box-sizing: border-box;
+    /* A system font stack so things load nice and quick! */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 100;
+    font-size: 10px;
+    color: var(--black);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+.album {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-gap: 10px;
+  align-items: center;
+}
+.album__artwork {
+  width: 100%;
+}
+/* ---------------------------------END of Albums--------------------------------- */
+
+
+/* --------------------------------START of Image Gallery---------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+.image-gallery {
+  padding: 50px;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #F93D66, #6D47D9);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 5px 0;
+}
+
+p {
+  margin: 0 0 20px 0;
+}
+
+.close {
+  background: none;
+  color: black;
+  border: 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  grid-auto-rows: 100px;
+  grid-auto-flow: dense;
+  grid-gap: 5px;
+}
+
+.item {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.item img {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: #5e0202 2px solid;
+}
+
+.item__overlay {
+  background: #ffc60032;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  transition: 0.2s;
+  transform: translateY(100%);
+}
+
+.item__overlay button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+}
+
+.item:hover .item__overlay {
+  transform: translateY(0);
+}
+
+
+.item.v2 {
+  grid-row: span 2;
+}
+
+.item.v3 {
+  grid-row: span 3;
+}
+
+.item.v4 {
+  grid-row: span 4;
+}
+
+.item.h2 {
+  grid-column: span 2;
+}
+
+.item.h3 {
+  grid-column: span 3;
+}
+
+.item.h4 {
+  grid-column: span 4;
+}
+
+
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 2;
+}
+
+.overlay.open {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.overlay-inner {
+  background: white;
+  width: 700px;
+  padding: 20px;
+}
+
+.overlay img {
+  width: 100%;
+}
+
+/* --------------------------------END of Image Gallery---------------------------------- */
